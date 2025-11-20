@@ -1,0 +1,184 @@
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [System,1,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Communications,2,14,28]; ]
+import Toybox.Communications;
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [WatchUi,4,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 6; @symbol_classdef = [DeleteItem,6,6,16]; ]
+class DeleteItem {
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 8; @symbol_functiondef = [onReceive,8,13,22]; @symbol_param<0> = [responseCode,8,23,35]; @symbol_param<0>_type<0> = [Number,8,39,45]; @symbol_param<1> = [data,8,47,51]; @symbol_param<1>_type<0> = [Dictionary,8,55,65]; ]
+    function onReceive(responseCode as Number, data as Dictionary or Null) as Void {
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_8_76_19_4_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 10 8 ]
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_8_17_8_if_stmt:
+        %tmp.1 = lgetv %responseCode;
+        symbol [ responseCode %tmp.1 10 12 24 ];
+        %tmp.2 = 200;
+        %tmp.3 = eq %tmp.1 %tmp.2;
+        bf %tmp.3 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_8_17_8_if_else_false;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_8_17_8_if_true:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_33_14_8_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 12 12 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_33_14_8_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_33_14_8_stop" ]
+        %callShoppinglist.1 = local;
+        symbol [ callShoppinglist %callShoppinglist.1 12 16 32 ];
+        symbol [ CallShoppingList %tmp.7 12 39 55 ];
+        %tmp.7 = getv ? :CallShoppingList;
+        %tmp.4 = newc %tmp.7 ();
+        lputv %callShoppinglist.1 %tmp.4;
+        symbol [ callShoppinglist %callShoppinglist.1 12 16 32 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 13 12 ]
+        %tmp.8 = lgetv %callShoppinglist.1;
+        symbol [ callShoppinglist %tmp.8 13 12 28 ];
+        symbol [ makeRequest %tmp.9 13 29 40 ];
+        %tmp.9 = getv function %tmp.8 :makeRequest;
+        invoke %tmp.8 %tmp.9();
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_33_14_8_stop:
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_8_17_8_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_8_17_8_if_else_false:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_14_15_17_8_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 16 12 ]
+        symbol [ WatchUi %tmp.10 16 12 19 ];
+        %tmp.10 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.11 16 20 28 ];
+        %tmp.11 = getv function %tmp.10 :pushView;
+        symbol [ TextView %tmp.15 16 33 41 ];
+        %tmp.15 = getv ? :TextView;
+        %tmp.16 = "Error";
+        %tmp.12 = newc %tmp.15 (%tmp.16);
+        symbol [ WatchUi %tmp.19 16 56 63 ];
+        %tmp.19 = getm $.Toybox.WatchUi;
+        symbol [ BehaviorDelegate %tmp.20 16 64 80 ];
+        %tmp.20 = getv function ? %tmp.19 :BehaviorDelegate;
+        %tmp.17 = newc %tmp.20 ();
+        symbol [ WatchUi %tmp.21 16 84 91 ];
+        %tmp.21 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.22 16 92 107 ];
+        %tmp.22 = getv %tmp.21 :SLIDE_IMMEDIATE;
+        invoke %tmp.10 %tmp.11(%tmp.12, %tmp.17, %tmp.22);
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_14_15_17_8_stop:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_10_8_17_8_if_end:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_8_76_19_4_stop:
+    }
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 21; @symbol_functiondef = [makeRequest,21,13,24]; @symbol_param<0> = [item,21,25,29]; ]
+    function makeRequest(item) as Void {
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 25 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_stop" ]
+        %config.1 = local;
+        symbol [ config %config.1 25 12 18 ];
+        symbol [ Config %tmp.4 25 25 31 ];
+        %tmp.4 = getv ? :Config;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %config.1 %tmp.1;
+        symbol [ config %config.1 25 12 18 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 27 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_stop" ]
+        %url.2 = local;
+        symbol [ url %url.2 27 12 15 ];
+        %tmp.5 = lgetv %config.1;
+        symbol [ config %tmp.5 27 18 24 ];
+        symbol [ baseUrl %tmp.6 27 25 32 ];
+        %tmp.6 = getv %tmp.5 :baseUrl;
+        %tmp.7 = "/api/services/todo/remove_item";
+        %tmp.8 = add %tmp.6 %tmp.7;
+        lputv %url.2 %tmp.8;
+        symbol [ url %url.2 27 12 15 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 29 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_stop" ]
+        %params.3 = local;
+        symbol [ params %params.3 29 12 18 ];
+        %tmp.9 = newd 2;
+        %tmp.10 = "entity_id";
+        %tmp.11 = lgetv %config.1;
+        symbol [ config %tmp.11 30 27 33 ];
+        symbol [ entityId %tmp.12 30 34 42 ];
+        %tmp.12 = getv %tmp.11 :entityId;
+        %tmp.13 = dup %tmp.9;
+        %tmp.14 = aputv %tmp.13 %tmp.10 %tmp.12;
+        %tmp.15 = "item";
+        %tmp.16 = lgetv %item;
+        symbol [ item %tmp.16 31 22 26 ];
+        %tmp.17 = "uid";
+        %tmp.18 = agetv %tmp.16 %tmp.17;
+        %tmp.19 = dup %tmp.14;
+        %tmp.20 = aputv %tmp.19 %tmp.15 %tmp.18;
+        lputv %params.3 %tmp.20;
+        symbol [ params %params.3 29 12 18 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 34 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_stop" ]
+        %options.4 = local;
+        symbol [ options %options.4 34 12 19 ];
+        %tmp.21 = newd 3;
+        %tmp.23 = const :method;
+        symbol [ method %tmp.23 35 13 19 const ];
+        symbol [ Communications %tmp.24 35 23 37 ];
+        %tmp.24 = getm $.Toybox.Communications;
+        symbol [ HTTP_REQUEST_METHOD_POST %tmp.25 35 38 62 ];
+        %tmp.25 = getv %tmp.24 :HTTP_REQUEST_METHOD_POST;
+        %tmp.26 = dup %tmp.21;
+        %tmp.27 = aputv %tmp.26 %tmp.23 %tmp.25;
+        %tmp.29 = const :headers;
+        symbol [ headers %tmp.29 36 13 20 const ];
+        %tmp.30 = newd 2;
+        %tmp.31 = "Content-Type";
+        symbol [ Communications %tmp.32 37 30 44 ];
+        %tmp.32 = getm $.Toybox.Communications;
+        symbol [ REQUEST_CONTENT_TYPE_JSON %tmp.33 37 45 70 ];
+        %tmp.33 = getv %tmp.32 :REQUEST_CONTENT_TYPE_JSON;
+        %tmp.34 = dup %tmp.30;
+        %tmp.35 = aputv %tmp.34 %tmp.31 %tmp.33;
+        %tmp.36 = "Authorization";
+        %tmp.37 = "Bearer ";
+        %tmp.38 = lgetv %config.1;
+        symbol [ config %tmp.38 38 43 49 ];
+        symbol [ longLivedAccessToken %tmp.39 38 50 70 ];
+        %tmp.39 = getv %tmp.38 :longLivedAccessToken;
+        %tmp.40 = add %tmp.37 %tmp.39;
+        %tmp.41 = dup %tmp.35;
+        %tmp.42 = aputv %tmp.41 %tmp.36 %tmp.40;
+        %tmp.43 = dup %tmp.27;
+        %tmp.44 = aputv %tmp.43 %tmp.29 %tmp.42;
+        %tmp.46 = const :responseType;
+        symbol [ responseType %tmp.46 40 13 25 const ];
+        symbol [ Communications %tmp.47 40 29 43 ];
+        %tmp.47 = getm $.Toybox.Communications;
+        symbol [ HTTP_RESPONSE_CONTENT_TYPE_JSON %tmp.48 40 44 75 ];
+        %tmp.48 = getv %tmp.47 :HTTP_RESPONSE_CONTENT_TYPE_JSON;
+        %tmp.49 = dup %tmp.44;
+        %tmp.50 = aputv %tmp.49 %tmp.46 %tmp.48;
+        lputv %options.4 %tmp.50;
+        symbol [ options %options.4 34 12 19 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc" 43 8 ]
+        symbol [ Communications %tmp.51 43 8 22 ];
+        %tmp.51 = getm $.Toybox.Communications;
+        symbol [ makeWebRequest %tmp.52 43 23 37 ];
+        %tmp.52 = getv function %tmp.51 :makeWebRequest;
+        %tmp.53 = lgetv %url.2;
+        symbol [ url %tmp.53 43 38 41 ];
+        %tmp.54 = lgetv %params.3;
+        symbol [ params %tmp.54 43 43 49 ];
+        %tmp.55 = lgetv %options.4;
+        symbol [ options %tmp.55 43 51 58 ];
+        %tmp.56 = self;
+        symbol [ method %tmp.57 43 60 66 ];
+        %tmp.57 = getv function %tmp.56 :method;
+        %tmp.59 = const :onReceive;
+        symbol [ onReceive %tmp.59 43 68 77 const ];
+        %tmp.60 = invoke %tmp.56 %tmp.57(%tmp.59);
+        invoke %tmp.51 %tmp.52(%tmp.53, %tmp.54, %tmp.55, %tmp.60);
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_DeleteItem_mc_21_39_44_4_stop:
+    }
+}
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/DeleteItem.mc"; @line = 1; ]
+<init> {
+}

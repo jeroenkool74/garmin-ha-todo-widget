@@ -1,0 +1,681 @@
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [System,1,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Communications,2,14,28]; ]
+import Toybox.Communications;
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 4; @symbol_importdef<0> = [Toybox,4,7,13]; @symbol_importdef<1> = [WatchUi,4,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 6; @symbol_classdef = [CallShoppingList,6,6,22]; ]
+class CallShoppingList {
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 6; ]
+    <init> {
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 8 8 ]
+        symbol [ Config %tmp.4 8 21 27 ];
+        %tmp.4 = getv ? :Config;
+        %tmp.1 = newc %tmp.4 ();
+        putv self :config %tmp.1;
+    }
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 8; @position = 8; @symbol_vardef = [config,8,8,14]; ]
+    var config;
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 11; @symbol_functiondef = [onReceive,11,13,22]; @symbol_param<0> = [responseCode,11,23,35]; @symbol_param<0>_type<0> = [Number,11,39,45]; @symbol_param<1> = [data,11,47,51]; @symbol_param<1>_type<0> = [Dictionary,11,55,65]; ]
+    function onReceive(responseCode as Number, data as Dictionary or Null) as Void {
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 13 8 ]
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_8_16_8_if_stmt:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_12_13_43_begin:
+        %tmp.1 = lgetv %responseCode;
+        symbol [ responseCode %tmp.1 13 12 24 ];
+        %tmp.2 = 200;
+        %tmp.3 = ne %tmp.1 %tmp.2;
+        bt %tmp.3 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_8_16_8_if_true;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_35_13_43_false:
+        %tmp.4 = lgetv %data;
+        symbol [ data %tmp.4 13 35 39 ];
+        %tmp.5 = null;
+        %tmp.6 = eq %tmp.4 %tmp.5;
+        push %tmp.6;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_35_13_43_end:
+        %tmp.7 = phi [%tmp.3 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_12_13_43_begin] [%tmp.6 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_35_13_43_false] [%tmp.7 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_35_13_43_end];
+        bf %tmp.7 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_8_16_8_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_8_16_8_if_true:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_49_16_8_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 14 12 ]
+        symbol [ WatchUi %tmp.8 14 12 19 ];
+        %tmp.8 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.9 14 20 28 ];
+        %tmp.9 = getv function %tmp.8 :pushView;
+        symbol [ TextView %tmp.13 14 33 41 ];
+        %tmp.13 = getv ? :TextView;
+        %tmp.14 = "Error";
+        %tmp.10 = newc %tmp.13 (%tmp.14);
+        symbol [ WatchUi %tmp.17 14 56 63 ];
+        %tmp.17 = getm $.Toybox.WatchUi;
+        symbol [ BehaviorDelegate %tmp.18 14 64 80 ];
+        %tmp.18 = getv function ? %tmp.17 :BehaviorDelegate;
+        %tmp.15 = newc %tmp.18 ();
+        symbol [ WatchUi %tmp.19 14 84 91 ];
+        %tmp.19 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.20 14 92 107 ];
+        %tmp.20 = getv %tmp.19 :SLIDE_IMMEDIATE;
+        invoke %tmp.8 %tmp.9(%tmp.10, %tmp.15, %tmp.20);
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 15 12 ]
+        ret ?;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_49_16_8_stop:
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_8_16_8_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_13_8_16_8_if_end:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 18 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop" ]
+        %serviceResponse.1 = local;
+        symbol [ serviceResponse %serviceResponse.1 18 12 27 ];
+        %tmp.21 = lgetv %data;
+        symbol [ data %tmp.21 18 30 34 ];
+        %tmp.22 = "service_response";
+        %tmp.23 = agetv %tmp.21 %tmp.22;
+        lputv %serviceResponse.1 %tmp.23;
+        symbol [ serviceResponse %serviceResponse.1 18 12 27 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 19 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop" ]
+        %todoResponse.2 = local;
+        symbol [ todoResponse %todoResponse.2 19 12 24 ];
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_begin:
+        %tmp.24 = lgetv %serviceResponse.1;
+        symbol [ serviceResponse %tmp.24 19 27 42 ];
+        %tmp.25 = null;
+        %tmp.26 = ne %tmp.24 %tmp.25;
+        bf %tmp.26 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_else_false;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_true:
+        %tmp.27 = lgetv %serviceResponse.1;
+        symbol [ serviceResponse %tmp.27 19 53 68 ];
+        %tmp.28 = as %tmp.27 { (!Null) };
+        symbol [ config %tmp.30 19 69 75 ];
+        %tmp.30 = getv ? :config;
+        symbol [ entityId %tmp.31 19 76 84 ];
+        %tmp.31 = getv %tmp.30 :entityId;
+        %tmp.32 = agetv %tmp.28 %tmp.31;
+        push %tmp.32;
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_else_false:
+        %tmp.33 = null;
+        push %tmp.33;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_end:
+        %tmp.34 = phi [%tmp.26 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_begin] [%tmp.32 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_true] [%tmp.33 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_else_false] [%tmp.34 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_19_27_19_88_end];
+        lputv %todoResponse.2 %tmp.34;
+        symbol [ todoResponse %todoResponse.2 19 12 24 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 20 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop" ]
+        %items.3 = local;
+        symbol [ items %items.3 20 12 17 ];
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_begin:
+        %tmp.35 = lgetv %todoResponse.2;
+        symbol [ todoResponse %tmp.35 20 20 32 ];
+        %tmp.36 = null;
+        %tmp.37 = ne %tmp.35 %tmp.36;
+        bf %tmp.37 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_else_false;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_true:
+        %tmp.38 = lgetv %todoResponse.2;
+        symbol [ todoResponse %tmp.38 20 43 55 ];
+        %tmp.39 = as %tmp.38 { (!Null) };
+        %tmp.40 = "items";
+        %tmp.41 = agetv %tmp.39 %tmp.40;
+        push %tmp.41;
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_else_false:
+        %tmp.42 = null;
+        push %tmp.42;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_end:
+        %tmp.43 = phi [%tmp.37 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_begin] [%tmp.41 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_true] [%tmp.42 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_else_false] [%tmp.43 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_20_20_20_67_end];
+        lputv %items.3 %tmp.43;
+        symbol [ items %items.3 20 12 17 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 22 8 ]
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_22_8_25_8_if_stmt:
+        %tmp.44 = lgetv %items.3;
+        symbol [ items %tmp.44 22 12 17 ];
+        %tmp.45 = null;
+        %tmp.46 = eq %tmp.44 %tmp.45;
+        bf %tmp.46 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_22_8_25_8_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_22_8_25_8_if_true:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_22_27_25_8_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 23 12 ]
+        symbol [ WatchUi %tmp.47 23 12 19 ];
+        %tmp.47 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.48 23 20 28 ];
+        %tmp.48 = getv function %tmp.47 :pushView;
+        symbol [ TextView %tmp.52 23 33 41 ];
+        %tmp.52 = getv ? :TextView;
+        %tmp.53 = "Error";
+        %tmp.49 = newc %tmp.52 (%tmp.53);
+        symbol [ WatchUi %tmp.56 23 56 63 ];
+        %tmp.56 = getm $.Toybox.WatchUi;
+        symbol [ BehaviorDelegate %tmp.57 23 64 80 ];
+        %tmp.57 = getv function ? %tmp.56 :BehaviorDelegate;
+        %tmp.54 = newc %tmp.57 ();
+        symbol [ WatchUi %tmp.58 23 84 91 ];
+        %tmp.58 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.59 23 92 107 ];
+        %tmp.59 = getv %tmp.58 :SLIDE_IMMEDIATE;
+        invoke %tmp.47 %tmp.48(%tmp.49, %tmp.54, %tmp.59);
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 24 12 ]
+        ret ?;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_22_27_25_8_stop:
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_22_8_25_8_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_22_8_25_8_if_end:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 27 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop" ]
+        %menu.4 = local;
+        symbol [ menu %menu.4 27 12 16 ];
+        symbol [ WatchUi %tmp.62 27 23 30 ];
+        %tmp.62 = getm $.Toybox.WatchUi;
+        symbol [ Menu2 %tmp.63 27 31 36 ];
+        %tmp.63 = getv function ? %tmp.62 :Menu2;
+        %tmp.64 = newd 1;
+        %tmp.66 = const :title;
+        symbol [ title %tmp.66 27 39 44 const ];
+        symbol [ config %tmp.68 27 46 52 ];
+        %tmp.68 = getv ? :config;
+        symbol [ listTitle %tmp.69 27 53 62 ];
+        %tmp.69 = getv %tmp.68 :listTitle;
+        %tmp.70 = dup %tmp.64;
+        %tmp.71 = aputv %tmp.70 %tmp.66 %tmp.69;
+        %tmp.60 = newc %tmp.63 (%tmp.71);
+        lputv %menu.4 %tmp.60;
+        symbol [ menu %menu.4 27 12 16 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 28 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop" ]
+        %itemLookup.5 = local;
+        symbol [ itemLookup %itemLookup.5 28 12 22 ];
+        %tmp.72 = newd 0;
+        lputv %itemLookup.5 %tmp.72;
+        symbol [ itemLookup %itemLookup.5 28 12 22 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 29 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop" ]
+        %shown.6 = local;
+        symbol [ shown %shown.6 29 12 17 ];
+        %tmp.73 = 0;
+        lputv %shown.6 %tmp.73;
+        symbol [ shown %shown.6 29 12 17 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 30 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop" ]
+        %maxItems.7 = local;
+        symbol [ maxItems %maxItems.7 30 12 20 ];
+        %tmp.74 = 100;
+        lputv %maxItems.7 %tmp.74;
+        symbol [ maxItems %maxItems.7 30 12 20 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 33 8 ]
+        for @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_test @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_incr @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_init:
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_begin" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_end" ]
+        %i.8 = local;
+        symbol [ i %i.8 33 17 18 ];
+        %tmp.75 = 0;
+        lputv %i.8 %tmp.75;
+        symbol [ i %i.8 33 17 18 ];
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_test:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_24_33_53_begin:
+        %tmp.76 = lgetv %i.8;
+        symbol [ i %tmp.76 33 24 25 ];
+        %tmp.77 = lgetv %items.3;
+        symbol [ items %tmp.77 33 28 33 ];
+        symbol [ size %tmp.78 33 34 38 ];
+        %tmp.78 = getv function %tmp.77 :size;
+        %tmp.79 = invoke %tmp.77 %tmp.78();
+        %tmp.80 = lt %tmp.76 %tmp.79;
+        %tmp.81 = dup %tmp.80;
+        bf %tmp.81 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_45_33_53_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_45_33_53_true:
+        %tmp.82 = lgetv %shown.6;
+        symbol [ shown %tmp.82 33 45 50 ];
+        %tmp.83 = lgetv %maxItems.7;
+        symbol [ maxItems %tmp.83 33 53 61 ];
+        %tmp.84 = lt %tmp.82 %tmp.83;
+        %tmp.85 = and %tmp.80 %tmp.84;
+        push %tmp.85;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_45_33_53_end:
+        %tmp.86 = phi [%tmp.81 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_24_33_53_begin] [%tmp.85 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_45_33_53_true] [%tmp.86 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_45_33_53_end];
+        bf %tmp.86 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_begin:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_68_45_8_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 34 12 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_68_45_8_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_68_45_8_stop" ]
+        %item.9 = local;
+        symbol [ item %item.9 34 16 20 ];
+        %tmp.87 = lgetv %items.3;
+        symbol [ items %tmp.87 34 23 28 ];
+        %tmp.88 = lgetv %i.8;
+        symbol [ i %tmp.88 34 29 30 ];
+        %tmp.89 = agetv %tmp.87 %tmp.88;
+        lputv %item.9 %tmp.89;
+        symbol [ item %item.9 34 16 20 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 35 12 ]
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_12_37_12_if_stmt:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_16_35_74_begin:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_16_35_51_begin:
+        %tmp.90 = lgetv %item.9;
+        symbol [ item %tmp.90 35 16 20 ];
+        %tmp.91 = null;
+        %tmp.92 = eq %tmp.90 %tmp.91;
+        bt %tmp.92 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_12_37_12_if_true;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_32_35_51_false:
+        %tmp.93 = lgetv %item.9;
+        symbol [ item %tmp.93 35 32 36 ];
+        %tmp.94 = as %tmp.93 { (!Null) };
+        %tmp.95 = "summary";
+        %tmp.96 = agetv %tmp.94 %tmp.95;
+        %tmp.97 = null;
+        %tmp.98 = eq %tmp.96 %tmp.97;
+        push %tmp.98;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_32_35_51_end:
+        %tmp.99 = phi [%tmp.92 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_16_35_51_begin] [%tmp.98 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_32_35_51_false] [%tmp.99 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_32_35_51_end];
+        bt %tmp.99 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_12_37_12_if_true;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_59_35_74_false:
+        %tmp.100 = lgetv %item.9;
+        symbol [ item %tmp.100 35 59 63 ];
+        %tmp.101 = as %tmp.100 { (!Null) };
+        %tmp.102 = "uid";
+        %tmp.103 = agetv %tmp.101 %tmp.102;
+        %tmp.104 = null;
+        %tmp.105 = eq %tmp.103 %tmp.104;
+        push %tmp.105;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_59_35_74_end:
+        %tmp.106 = phi [%tmp.99 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_16_35_74_begin] [%tmp.105 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_59_35_74_false] [%tmp.106 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_59_35_74_end];
+        bf %tmp.106 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_12_37_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_12_37_12_if_true:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_80_37_12_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 36 16 ]
+        goto break @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_incr;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_80_37_12_stop:
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_12_37_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_35_12_37_12_if_end:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 38 12 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_68_45_8_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_68_45_8_stop" ]
+        %status.10 = local;
+        symbol [ status %status.10 38 16 22 ];
+        %tmp.107 = lgetv %item.9;
+        symbol [ item %tmp.107 38 25 29 ];
+        %tmp.108 = "status";
+        %tmp.109 = agetv %tmp.107 %tmp.108;
+        lputv %status.10 %tmp.109;
+        symbol [ status %status.10 38 16 22 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 39 12 ]
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_12_44_12_if_stmt:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_16_39_70_begin:
+        %tmp.110 = lgetv %status.10;
+        symbol [ status %tmp.110 39 16 22 ];
+        %tmp.111 = null;
+        %tmp.112 = eq %tmp.110 %tmp.111;
+        bt %tmp.112 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_12_44_12_if_true;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_34_39_70_false:
+        %tmp.113 = lgetv %status.10;
+        symbol [ status %tmp.113 39 35 41 ];
+        %tmp.114 = as %tmp.113 { (!Null) };
+        symbol [ equals %tmp.115 39 42 48 ];
+        %tmp.115 = getv function %tmp.114 :equals;
+        %tmp.116 = "completed";
+        %tmp.117 = invoke %tmp.114 %tmp.115(%tmp.116);
+        %tmp.118 = false;
+        %tmp.119 = eq %tmp.117 %tmp.118;
+        push %tmp.119;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_34_39_70_end:
+        %tmp.120 = phi [%tmp.112 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_16_39_70_begin] [%tmp.119 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_34_39_70_false] [%tmp.120 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_34_39_70_end];
+        bf %tmp.120 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_12_44_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_12_44_12_if_true:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_73_44_12_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 40 16 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_73_44_12_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_73_44_12_stop" ]
+        %id.11 = local;
+        symbol [ id %id.11 40 20 22 ];
+        %tmp.121 = lgetv %item.9;
+        symbol [ item %tmp.121 40 25 29 ];
+        %tmp.122 = "uid";
+        %tmp.123 = agetv %tmp.121 %tmp.122;
+        lputv %id.11 %tmp.123;
+        symbol [ id %id.11 40 20 22 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 41 16 ]
+        %tmp.124 = lgetv %menu.4;
+        symbol [ menu %tmp.124 41 16 20 ];
+        symbol [ addItem %tmp.125 41 21 28 ];
+        %tmp.125 = getv function %tmp.124 :addItem;
+        symbol [ MenuItem %tmp.129 41 33 41 ];
+        %tmp.129 = getv ? :MenuItem;
+        %tmp.130 = lgetv %item.9;
+        symbol [ item %tmp.130 41 42 46 ];
+        %tmp.131 = "summary";
+        %tmp.132 = agetv %tmp.130 %tmp.131;
+        %tmp.133 = null;
+        %tmp.134 = lgetv %id.11;
+        symbol [ id %tmp.134 41 65 67 ];
+        %tmp.135 = newd 0;
+        %tmp.126 = newc %tmp.129 (%tmp.132, %tmp.133, %tmp.134, %tmp.135);
+        invoke %tmp.124 %tmp.125(%tmp.126);
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 42 16 ]
+        %tmp.136 = lgetv %itemLookup.5;
+        symbol [ itemLookup %tmp.136 42 16 26 ];
+        symbol [ put %tmp.137 42 27 30 ];
+        %tmp.137 = getv function %tmp.136 :put;
+        %tmp.138 = lgetv %id.11;
+        symbol [ id %tmp.138 42 31 33 ];
+        %tmp.139 = lgetv %item.9;
+        symbol [ item %tmp.139 42 35 39 ];
+        invoke %tmp.136 %tmp.137(%tmp.138, %tmp.139);
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 43 16 ]
+        %tmp.142 = lgetv %shown.6;
+        symbol [ shown %tmp.142 43 16 21 ];
+        %tmp.143 = add %tmp.142 1;
+        lputv %shown.6 %tmp.143;
+        symbol [ shown %shown.6 43 16 21 ];
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_73_44_12_stop:
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_12_44_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_39_12_44_12_if_end:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_68_45_8_stop:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_incr:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 33 ]
+        %tmp.146 = lgetv %i.8;
+        symbol [ i %tmp.146 33 63 64 ];
+        %tmp.147 = add %tmp.146 1;
+        lputv %i.8 %tmp.147;
+        symbol [ i %i.8 33 63 64 ];
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_test;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_33_8_45_8_for_end:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 47 8 ]
+        for @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_test @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_incr @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_init:
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_begin" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_end" ]
+        %i.12 = local;
+        symbol [ i %i.12 47 17 18 ];
+        %tmp.148 = 0;
+        lputv %i.12 %tmp.148;
+        symbol [ i %i.12 47 17 18 ];
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_test:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_24_47_53_begin:
+        %tmp.149 = lgetv %i.12;
+        symbol [ i %tmp.149 47 24 25 ];
+        %tmp.150 = lgetv %items.3;
+        symbol [ items %tmp.150 47 28 33 ];
+        symbol [ size %tmp.151 47 34 38 ];
+        %tmp.151 = getv function %tmp.150 :size;
+        %tmp.152 = invoke %tmp.150 %tmp.151();
+        %tmp.153 = lt %tmp.149 %tmp.152;
+        %tmp.154 = dup %tmp.153;
+        bf %tmp.154 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_45_47_53_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_45_47_53_true:
+        %tmp.155 = lgetv %shown.6;
+        symbol [ shown %tmp.155 47 45 50 ];
+        %tmp.156 = lgetv %maxItems.7;
+        symbol [ maxItems %tmp.156 47 53 61 ];
+        %tmp.157 = lt %tmp.155 %tmp.156;
+        %tmp.158 = and %tmp.153 %tmp.157;
+        push %tmp.158;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_45_47_53_end:
+        %tmp.159 = phi [%tmp.154 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_24_47_53_begin] [%tmp.158 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_45_47_53_true] [%tmp.159 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_45_47_53_end];
+        bf %tmp.159 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_begin:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_68_59_8_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 48 12 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_68_59_8_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_68_59_8_stop" ]
+        %item.13 = local;
+        symbol [ item %item.13 48 16 20 ];
+        %tmp.160 = lgetv %items.3;
+        symbol [ items %tmp.160 48 23 28 ];
+        %tmp.161 = lgetv %i.12;
+        symbol [ i %tmp.161 48 29 30 ];
+        %tmp.162 = agetv %tmp.160 %tmp.161;
+        lputv %item.13 %tmp.162;
+        symbol [ item %item.13 48 16 20 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 49 12 ]
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_12_51_12_if_stmt:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_16_49_74_begin:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_16_49_51_begin:
+        %tmp.163 = lgetv %item.13;
+        symbol [ item %tmp.163 49 16 20 ];
+        %tmp.164 = null;
+        %tmp.165 = eq %tmp.163 %tmp.164;
+        bt %tmp.165 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_12_51_12_if_true;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_32_49_51_false:
+        %tmp.166 = lgetv %item.13;
+        symbol [ item %tmp.166 49 32 36 ];
+        %tmp.167 = as %tmp.166 { (!Null) };
+        %tmp.168 = "summary";
+        %tmp.169 = agetv %tmp.167 %tmp.168;
+        %tmp.170 = null;
+        %tmp.171 = eq %tmp.169 %tmp.170;
+        push %tmp.171;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_32_49_51_end:
+        %tmp.172 = phi [%tmp.165 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_16_49_51_begin] [%tmp.171 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_32_49_51_false] [%tmp.172 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_32_49_51_end];
+        bt %tmp.172 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_12_51_12_if_true;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_59_49_74_false:
+        %tmp.173 = lgetv %item.13;
+        symbol [ item %tmp.173 49 59 63 ];
+        %tmp.174 = as %tmp.173 { (!Null) };
+        %tmp.175 = "uid";
+        %tmp.176 = agetv %tmp.174 %tmp.175;
+        %tmp.177 = null;
+        %tmp.178 = eq %tmp.176 %tmp.177;
+        push %tmp.178;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_59_49_74_end:
+        %tmp.179 = phi [%tmp.172 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_16_49_74_begin] [%tmp.178 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_59_49_74_false] [%tmp.179 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_59_49_74_end];
+        bf %tmp.179 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_12_51_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_12_51_12_if_true:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_80_51_12_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 50 16 ]
+        goto break @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_incr;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_80_51_12_stop:
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_12_51_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_49_12_51_12_if_end:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 52 12 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_68_59_8_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_68_59_8_stop" ]
+        %status.14 = local;
+        symbol [ status %status.14 52 16 22 ];
+        %tmp.180 = lgetv %item.13;
+        symbol [ item %tmp.180 52 25 29 ];
+        %tmp.181 = "status";
+        %tmp.182 = agetv %tmp.180 %tmp.181;
+        lputv %status.14 %tmp.182;
+        symbol [ status %status.14 52 16 22 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 53 12 ]
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_12_58_12_if_stmt:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_16_53_60_begin:
+        %tmp.183 = lgetv %status.14;
+        symbol [ status %tmp.183 53 16 22 ];
+        %tmp.184 = null;
+        %tmp.185 = ne %tmp.183 %tmp.184;
+        bf %tmp.185 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_12_58_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_35_53_60_true:
+        %tmp.186 = lgetv %status.14;
+        symbol [ status %tmp.186 53 35 41 ];
+        %tmp.187 = as %tmp.186 { (!Null) };
+        symbol [ equals %tmp.188 53 42 48 ];
+        %tmp.188 = getv function %tmp.187 :equals;
+        %tmp.189 = "completed";
+        %tmp.190 = invoke %tmp.187 %tmp.188(%tmp.189);
+        push %tmp.190;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_35_53_60_end:
+        %tmp.191 = phi [%tmp.185 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_16_53_60_begin] [%tmp.190 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_35_53_60_true] [%tmp.191 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_35_53_60_end];
+        bf %tmp.191 @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_12_58_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_12_58_12_if_true:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_63_58_12_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 54 16 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_63_58_12_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_63_58_12_stop" ]
+        %id.15 = local;
+        symbol [ id %id.15 54 20 22 ];
+        %tmp.192 = lgetv %item.13;
+        symbol [ item %tmp.192 54 25 29 ];
+        %tmp.193 = "uid";
+        %tmp.194 = agetv %tmp.192 %tmp.193;
+        lputv %id.15 %tmp.194;
+        symbol [ id %id.15 54 20 22 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 55 16 ]
+        %tmp.195 = lgetv %menu.4;
+        symbol [ menu %tmp.195 55 16 20 ];
+        symbol [ addItem %tmp.196 55 21 28 ];
+        %tmp.196 = getv function %tmp.195 :addItem;
+        symbol [ MenuItem %tmp.200 55 33 41 ];
+        %tmp.200 = getv ? :MenuItem;
+        %tmp.201 = "X ";
+        %tmp.202 = lgetv %item.13;
+        symbol [ item %tmp.202 55 49 53 ];
+        %tmp.203 = "summary";
+        %tmp.204 = agetv %tmp.202 %tmp.203;
+        %tmp.205 = add %tmp.201 %tmp.204;
+        %tmp.206 = null;
+        %tmp.207 = lgetv %id.15;
+        symbol [ id %tmp.207 55 72 74 ];
+        %tmp.208 = newd 0;
+        %tmp.197 = newc %tmp.200 (%tmp.205, %tmp.206, %tmp.207, %tmp.208);
+        invoke %tmp.195 %tmp.196(%tmp.197);
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 56 16 ]
+        %tmp.209 = lgetv %itemLookup.5;
+        symbol [ itemLookup %tmp.209 56 16 26 ];
+        symbol [ put %tmp.210 56 27 30 ];
+        %tmp.210 = getv function %tmp.209 :put;
+        %tmp.211 = lgetv %id.15;
+        symbol [ id %tmp.211 56 31 33 ];
+        %tmp.212 = lgetv %item.13;
+        symbol [ item %tmp.212 56 35 39 ];
+        invoke %tmp.209 %tmp.210(%tmp.211, %tmp.212);
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 57 16 ]
+        %tmp.215 = lgetv %shown.6;
+        symbol [ shown %tmp.215 57 16 21 ];
+        %tmp.216 = add %tmp.215 1;
+        lputv %shown.6 %tmp.216;
+        symbol [ shown %shown.6 57 16 21 ];
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_63_58_12_stop:
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_12_58_12_if_end;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_53_12_58_12_if_end:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_68_59_8_stop:
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_incr:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 47 ]
+        %tmp.219 = lgetv %i.12;
+        symbol [ i %tmp.219 47 63 64 ];
+        %tmp.220 = add %tmp.219 1;
+        lputv %i.12 %tmp.220;
+        symbol [ i %i.12 47 63 64 ];
+        goto @_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_test;
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_47_8_59_8_for_end:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 62 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop" ]
+        %delegate.16 = local;
+        symbol [ delegate %delegate.16 62 12 20 ];
+        symbol [ SelectItemDelegate %tmp.224 62 27 45 ];
+        %tmp.224 = getv ? :SelectItemDelegate;
+        %tmp.225 = lgetv %itemLookup.5;
+        symbol [ itemLookup %tmp.225 62 46 56 ];
+        %tmp.221 = newc %tmp.224 (%tmp.225);
+        lputv %delegate.16 %tmp.221;
+        symbol [ delegate %delegate.16 62 12 20 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 65 8 ]
+        symbol [ WatchUi %tmp.226 65 8 15 ];
+        %tmp.226 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.227 65 16 28 ];
+        %tmp.227 = getv function %tmp.226 :switchToView;
+        %tmp.228 = lgetv %menu.4;
+        symbol [ menu %tmp.228 65 29 33 ];
+        %tmp.229 = lgetv %delegate.16;
+        symbol [ delegate %tmp.229 65 35 43 ];
+        symbol [ WatchUi %tmp.230 65 45 52 ];
+        %tmp.230 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_IMMEDIATE %tmp.231 65 53 68 ];
+        %tmp.231 = getv %tmp.230 :SLIDE_IMMEDIATE;
+        invoke %tmp.226 %tmp.227(%tmp.228, %tmp.229, %tmp.231);
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_11_76_67_4_stop:
+    }
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 69; @symbol_functiondef = [makeRequest,69,13,24]; ]
+    function makeRequest() as Void {
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_69_35_89_4_start:
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 73 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_69_35_89_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_69_35_89_4_stop" ]
+        %url.1 = local;
+        symbol [ url %url.1 73 12 15 ];
+        symbol [ config %tmp.2 73 18 24 ];
+        %tmp.2 = getv ? :config;
+        symbol [ baseUrl %tmp.3 73 25 32 ];
+        %tmp.3 = getv %tmp.2 :baseUrl;
+        %tmp.4 = "/api/services/todo/get_items?return_response=null";
+        %tmp.5 = add %tmp.3 %tmp.4;
+        lputv %url.1 %tmp.5;
+        symbol [ url %url.1 73 12 15 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 75 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_69_35_89_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_69_35_89_4_stop" ]
+        %params.2 = local;
+        symbol [ params %params.2 75 12 18 ];
+        %tmp.6 = newd 1;
+        %tmp.7 = "entity_id";
+        symbol [ config %tmp.9 76 27 33 ];
+        %tmp.9 = getv ? :config;
+        symbol [ entityId %tmp.10 76 34 42 ];
+        %tmp.10 = getv %tmp.9 :entityId;
+        %tmp.11 = dup %tmp.6;
+        %tmp.12 = aputv %tmp.11 %tmp.7 %tmp.10;
+        lputv %params.2 %tmp.12;
+        symbol [ params %params.2 75 12 18 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 79 8 ]
+        [ "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_69_35_89_4_start" "_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_69_35_89_4_stop" ]
+        %options.3 = local;
+        symbol [ options %options.3 79 12 19 ];
+        %tmp.13 = newd 3;
+        %tmp.15 = const :method;
+        symbol [ method %tmp.15 80 13 19 const ];
+        symbol [ Communications %tmp.16 80 23 37 ];
+        %tmp.16 = getm $.Toybox.Communications;
+        symbol [ HTTP_REQUEST_METHOD_POST %tmp.17 80 38 62 ];
+        %tmp.17 = getv %tmp.16 :HTTP_REQUEST_METHOD_POST;
+        %tmp.18 = dup %tmp.13;
+        %tmp.19 = aputv %tmp.18 %tmp.15 %tmp.17;
+        %tmp.21 = const :headers;
+        symbol [ headers %tmp.21 81 13 20 const ];
+        %tmp.22 = newd 2;
+        %tmp.23 = "Content-Type";
+        symbol [ Communications %tmp.24 82 30 44 ];
+        %tmp.24 = getm $.Toybox.Communications;
+        symbol [ REQUEST_CONTENT_TYPE_JSON %tmp.25 82 45 70 ];
+        %tmp.25 = getv %tmp.24 :REQUEST_CONTENT_TYPE_JSON;
+        %tmp.26 = dup %tmp.22;
+        %tmp.27 = aputv %tmp.26 %tmp.23 %tmp.25;
+        %tmp.28 = "Authorization";
+        %tmp.29 = "Bearer ";
+        symbol [ config %tmp.31 83 43 49 ];
+        %tmp.31 = getv ? :config;
+        symbol [ longLivedAccessToken %tmp.32 83 50 70 ];
+        %tmp.32 = getv %tmp.31 :longLivedAccessToken;
+        %tmp.33 = add %tmp.29 %tmp.32;
+        %tmp.34 = dup %tmp.27;
+        %tmp.35 = aputv %tmp.34 %tmp.28 %tmp.33;
+        %tmp.36 = dup %tmp.19;
+        %tmp.37 = aputv %tmp.36 %tmp.21 %tmp.35;
+        %tmp.39 = const :responseType;
+        symbol [ responseType %tmp.39 85 13 25 const ];
+        symbol [ Communications %tmp.40 85 29 43 ];
+        %tmp.40 = getm $.Toybox.Communications;
+        symbol [ HTTP_RESPONSE_CONTENT_TYPE_JSON %tmp.41 85 44 75 ];
+        %tmp.41 = getv %tmp.40 :HTTP_RESPONSE_CONTENT_TYPE_JSON;
+        %tmp.42 = dup %tmp.37;
+        %tmp.43 = aputv %tmp.42 %tmp.39 %tmp.41;
+        lputv %options.3 %tmp.43;
+        symbol [ options %options.3 79 12 19 ];
+[ "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc" 88 8 ]
+        symbol [ Communications %tmp.44 88 8 22 ];
+        %tmp.44 = getm $.Toybox.Communications;
+        symbol [ makeWebRequest %tmp.45 88 23 37 ];
+        %tmp.45 = getv function %tmp.44 :makeWebRequest;
+        %tmp.46 = lgetv %url.1;
+        symbol [ url %tmp.46 88 38 41 ];
+        %tmp.47 = lgetv %params.2;
+        symbol [ params %tmp.47 88 43 49 ];
+        %tmp.48 = lgetv %options.3;
+        symbol [ options %tmp.48 88 51 58 ];
+        %tmp.49 = self;
+        symbol [ method %tmp.50 88 60 66 ];
+        %tmp.50 = getv function %tmp.49 :method;
+        %tmp.52 = const :onReceive;
+        symbol [ onReceive %tmp.52 88 68 77 const ];
+        %tmp.53 = invoke %tmp.49 %tmp.50(%tmp.52);
+        invoke %tmp.44 %tmp.45(%tmp.46, %tmp.47, %tmp.48, %tmp.53);
+_Users_jeroenkool_personal_monkey_first_app_Firstproject_source_CallShoppingList_mc_69_35_89_4_stop:
+    }
+}
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/CallShoppingList.mc"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,29 @@
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 1; @symbol_classdef = [Config,1,6,12]; ]
+class Config {
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 1; ]
+    <init> {
+    }
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 1; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 2; @position = 8; @symbol_vardef = [baseUrl,2,8,15]; ]
+    var baseUrl = "https://example.com";
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 3; @position = 8; @symbol_vardef = [longLivedAccessToken,3,8,28]; ]
+    var longLivedAccessToken = "REPLACE_WITH_LONG_LIVED_TOKEN";
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 4; @position = 8; @symbol_vardef = [listTitle,4,8,17]; ]
+    var listTitle = "Shoppinglist";
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 5; @position = 8; @symbol_vardef = [entityId,5,8,16]; ]
+    var entityId = "todo.shopping_list";
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 8; @position = 8; @symbol_vardef = [clickSelect,8,8,19]; ]
+    var clickSelect = "Click select";
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 9; @position = 8; @symbol_vardef = [deselect,9,8,16]; ]
+    var deselect = "Deselect";
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 10; @position = 8; @symbol_vardef = [delete,10,8,14]; ]
+    var delete = "Delete";
+    [ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 11; @position = 8; @symbol_vardef = [loading,11,8,15]; ]
+    var loading = "Loading...";
+}
+[ @file = "/Users/jeroenkool/personal/monkey/first_app/Firstproject/source/Config.mc"; @line = 1; ]
+<init> {
+}
